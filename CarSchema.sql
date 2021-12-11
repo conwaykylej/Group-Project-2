@@ -1,0 +1,43 @@
+ DROP TABLE used_cars;
+ DROP TABLE prices;
+ DROP TABLE fuel_efficiency;
+ 
+ CREATE TABLE used_cars (
+							ID SERIAL PRIMARY KEY,
+	 						YEAR integer NOT NULL,
+							MAKE VARCHAR(30) NOT NULL,
+							MODEL VARCHAR(30),
+							TRIM VARCHAR(30) NULL,
+							BODY_TYPE VARCHAR(30) NULL,
+							VEHICLE_TYPE VARCHAR(30) NULL,
+							DRIVETRAIN VARCHAR(30) NULL,
+							FUEL_TYPE VARCHAR(30) NULL,
+							ENGINE_SIZE VARCHAR(30) NULL
+						);	
+						
+CREATE TABLE prices (
+	                  ID SERIAL PRIMARY KEY,
+ 					  YEAR integer NOT NULL,
+					  MAKE VARCHAR(30) NOT NULL,
+					  MODEL VARCHAR(30),
+					  PRICE DECIMAL
+					);
+					
+CREATE TABLE fuel_efficiency (
+							    ID SERIAL PRIMARY KEY,
+								YEAR integer NOT NULL,
+								MAKE VARCHAR(30) NOT NULL,
+								MODEL VARCHAR(30),
+								HYBRID_NONHYBRID VARCHAR(30) NOT NULL,
+								STANDARD_TYPE VARCHAR(30) NOT NULL,
+								EPA_RATING_CITY integer,
+								TOTAL_ACTUAL_MILES integer,
+								TOTAL_ACTUAL_FUEL integer,
+								EPA_EXPECTED_FUEL DECIMAL,
+								ACTUAL_FUEL_ECONOMY_GEOTAB DECIMAL,
+								DIFFERENCE_ACTUAL_TO_EPA DECIMAL,
+								ESTIMATED_FUEL_COSTS_PER_GALLON DECIMAL,
+								FUEL_COSTS_PER_MILE DECIMAL
+							);
+							
+CREATE TABLE analysis_ready_table ();
