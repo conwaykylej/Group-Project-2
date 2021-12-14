@@ -1,10 +1,10 @@
  --SELECT * FROM original_used_cars;
  --SELECT * FROM original_fuel_efficiency;
+ --select * from analysis_ready_car_data
  
  DROP TABLE original_used_cars;
  DROP TABLE original_fuel_efficiency;
- DROP TABLE analysis_ready_table;
- --DROP TABLE prices;
+ DROP TABLE analysis_ready_car_data;
 
  CREATE TABLE original_used_cars (
 							ID VARCHAR(200) PRIMARY KEY,
@@ -30,14 +30,7 @@
 							ZIP VARCHAR(10)
 						);	
 						
---CREATE TABLE prices (
-	                 -- ROW_ID SERIAL PRIMARY KEY,
- 					 -- YEAR integer NOT NULL,
-					 -- MAKE VARCHAR(200) NOT NULL,
-					  --MODEL VARCHAR(200),
-					  --PRICE DECIMAL
-					--);
-					
+
 CREATE TABLE original_fuel_efficiency (
 									    ID SERIAL PRIMARY KEY,
 									    YEAR INTEGER NOT NULL,
@@ -55,5 +48,29 @@ CREATE TABLE original_fuel_efficiency (
 									    ESTIMATED_FUEL_COSTS_PER_GALLON VARCHAR(200),
 								        FUEL_COSTS_PER_MILE VARCHAR(200) 
 									);
-							
-CREATE TABLE analysis_ready_table ();
+											
+CREATE TABLE analysis_ready_car_data ( 
+										ID SERIAL PRIMARY KEY,
+										year INTEGER NOT NULL,
+										make VARCHAR(200) NOT NULL,
+										model VARCHAR(200),	
+										price DECIMAL,	
+										miles INTEGER,	
+										trim VARCHAR(200),	
+										body_type VARCHAR(200),
+										vehicle_type VARCHAR(200),	
+										drivetrain VARCHAR(200),
+										transmission VARCHAR(200),	
+										fuel_type VARCHAR(200),	
+										engine_size DECIMAL,
+										motor_type VARCHAR(200) NOT NULL,
+										standard_type VARCHAR(200) NOT NULL,
+										epa_rating_city INTEGER,
+										total_actual_miles INTEGER,
+										total_actual_fuel INTEGER,
+										epa_expected_fuel DECIMAL,
+										actual_fuel_economy_geotab DECIMAL,
+										percent_difference_actual_to_epa DECIMAL,
+										estimated_fuel_costs_per_gallon VARCHAR(200),
+										fuel_costs_per_mile VARCHAR(200) 
+								  );								  
